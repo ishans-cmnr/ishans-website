@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Creative Space</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Creative Space</h1>
+            <p class="subtitle">Art • Literature • Life</p>
+            <nav>
+                <button class="nav-btn active" onclick="showSection('drawings')">Drawings</button>
+                <button class="nav-btn" onclick="showSection('reviews')">Book Reviews</button>
+                <button class="nav-btn" onclick="showSection('games')">Video Games</button>
+                <button class="nav-btn" onclick="showSection('about')">About Me</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Drawings Section -->
+            <section id="drawings" class="section active">
+                <h2>My Art Journey</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div id="drawings-timeline">
+                        <!-- Drawings will be dynamically generated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Book Reviews Section -->
+            <section id="reviews" class="section">
+                <h2>Reading Timeline</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div id="books-timeline">
+                        <!-- Books will be dynamically generated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Games Section -->
+            <section id="games" class="section">
+                <h2>Gaming Journey</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div id="games-timeline">
+                        <!-- Games will be dynamically generated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="profile-section">
+                        <div class="profile-img">
+                            👋
+                        </div>
+                        <div class="intro-text">
+                            <p>Hello! I'm a creative soul who finds joy in expressing ideas through art, words, and interactive experiences. This space is where I share my artistic journey through drawings, my thoughts on the books that have shaped my perspective, and my adventures in the world of gaming.</p>
+                            
+                            <p>When I'm not sketching, reading, or gaming, you might find me exploring new coffee shops, taking long walks in nature, or getting lost in deep conversations about life, art, and everything in between.</p>
+                            
+                            <p>I believe that creativity comes in many forms - whether it's through traditional art, storytelling, or the interactive narratives found in video games. I hope my work here inspires others to embrace their own creative adventures.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <a href="#" class="contact-item">📧 Email</a>
+                        <a href="#" class="contact-item">📷 Instagram</a>
+                        <a href="#" class="contact-item">🐦 Twitter</a>
+                        <a href="#" class="contact-item">💼 LinkedIn</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Zoom Modal -->
+        <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
+            <div class="zoom-close" onclick="closeZoom()">&times;</div>
+            <div class="zoom-controls">
+                <button class="zoom-btn" onclick="event.stopPropagation(); zoomIn()">+</button>
+                <button class="zoom-btn" onclick="event.stopPropagation(); zoomOut()">−</button>
+                <button class="zoom-btn" onclick="event.stopPropagation(); resetZoom()" title="Reset">⌂</button>
+            </div>
+            <div class="zoom-instructions">
+                Mouse: Scroll to zoom • Drag to pan • Double-click to toggle zoom<br>
+                Touch: Pinch to zoom • Drag to pan
+            </div>
+            <div class="zoom-modal-content" onclick="event.stopPropagation()">
+                <img id="zoomImage" src="" alt="Zoomed Artwork">
+                <div id="zoomInfo" class="zoom-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Configuration -->
+    <script src="data.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
